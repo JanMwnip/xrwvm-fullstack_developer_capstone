@@ -11,8 +11,8 @@ from .restapis import get_request, analyze_review_sentiments, post_review
 # Get an instance of a logger
 logger = logging.getLogger(__name__)
 
-# Create your views here.
 
+# Create your views here.
 def get_cars(request):
     count = CarMake.objects.filter().count()
     print(count)
@@ -55,8 +55,6 @@ def logout_request(request):
 # Create a `registration` view to handle sign up request
 @csrf_exempt
 def registration(request):
-    context = {}
-
     data = json.loads(request.body)
     username = data['userName']
     password = data['password']
